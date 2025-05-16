@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiche Avanzate LeBron James</title>
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='favicon/lebron9-bg.gif') }}") no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* Contorno nero per tutto il testo */
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+        h1, h2, th, td, ul, li, p, div, table {
+            color: #fff;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+        h1 { text-align: center; margin-top: 30px; }
+        section { background: rgba(0,0,0,0.7); margin: 30px auto; padding: 20px; border-radius: 12px; max-width: 900px; box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+        h2 { border-bottom: 1px solid #fff; padding-bottom: 5px; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { padding: 8px 12px; border-bottom: 1px solid #333; text-align: left; }
+        th { background: #222; }
+        tr:last-child td { border-bottom: none; }
+        ul { margin: 0 0 0 20px; }
+        .category-count { display: flex; flex-wrap: wrap; gap: 20px; }
+        .category-count div { background: #222; padding: 10px 20px; border-radius: 8px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Statistiche Avanzate su LeBron James</h1>
+    <section>
+        <h2>Stagioni con più di 25 punti di media</h2>
+        <table>
+            <tr><th>Stagione</th><th>Punti per partita</th></tr>
+            {% for row in results['seasons_over_25_ppg'] %}
+            <tr><td>{{ row.season }}</td><td>{{ row.points_per_game }}</td></tr>
+            {% endfor %}
+        </table>
+    </section>
+    <section>
+        <h2>Top 5 stagioni per assist</h2>
+        <table>
+            <tr><th>Stagione</th><th>Assist per partita</th></tr>
+            {% for row in results['top_5_assist_seasons'] %}
+            <tr><td>{{ row.season }}</td><td>{{ row.assists_per_game }}</td></tr>
+            {% endfor %}
+        </table>
+    </section>
+    <section>
+        <h2>Statistiche medie per stagione</h2>
+        <table>
+            <tr><th>Stagione</th><th>Punti</th><th>Rimbalzi</th><th>Assist</th></tr>
+            {% for row in results['season_avg_pts_reb_ast'] %}
+            <tr><td>{{ row.season }}</td><td>{{ row.points_per_game }}</td><td>{{ row.rebounds_per_game }}</td><td>{{ row.assists_per_game }}</td></tr>
+            {% endfor %}
+        </table>
+    </section>
+    <section>
+        <h2>Stagione con più rimbalzi</h2>
+        <ul>
+            {% for row in results['season_max_rebounds'] %}
+            <li>{{ row.season }}: {{ row.rebounds_per_game }} rimbalzi</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Squadre in cui ha giocato</h2>
+        <ul>
+            {% for row in results['teams_played_for'] %}
+            <li>{{ row.team }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Top 5 partite per punti segnati</h2>
+        <table>
+            <tr><th>Data</th><th>Avversario</th><th>Punti</th></tr>
+            {% for row in results['top_5_highest_scoring_games'] %}
+            <tr><td>{{ row.game_date }}</td><td>{{ row.opponent }}</td><td>{{ row.points }}</td></tr>
+            {% endfor %}
+        </table>
+    </section>
+    <section>
+        <h2>Partite con almeno 10 assist e 10 rimbalzi</h2>
+        <table>
+            <tr><th>Data</th><th>Avversario</th><th>Assist</th><th>Rimbalzi</th></tr>
+            {% for row in results['games_with_10_ast_10_reb'] %}
+            <tr><td>{{ row.game_date }}</td><td>{{ row.opponent }}</td><td>{{ row.assists }}</td><td>{{ row.rebounds }}</td></tr>
+            {% endfor %}
+        </table>
+    </section>
+    <section>
+        <h2>Media punti in casa vs trasferta</h2>
+        <table>
+            <tr><th>Casa/Trasferta</th><th>Media punti</th></tr>
+            {% for row in results['avg_points_home_vs_away'] %}
+            <tr><td>{{ row.home_away }}</td><td>{{ row.avg_points|round(1) }}</td></tr>
+            {% endfor %}
+        </table>
+    </section>
+    <section>
+        <h2>Punti totali contro ogni avversario</h2>
+        <table>
+            <tr><th>Avversario</th><th>Punti totali</th></tr>
+            {% for row in results['total_points_vs_opponents'] %}
+            <tr><td>{{ row.opponent }}</td><td>{{ row.total_points }}</td></tr>
+            {% endfor %}
+        </table>
+    </section>
+    <section>
+        <h2>Ultimi 5 highlights</h2>
+        <ul>
+            {% for row in results['latest_5_highlights'] %}
+            <li>{{ row.title }} ({{ row.event_date }})</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Conteggio highlights per categoria</h2>
+        <div class="category-count">
+            {% for row in results['highlight_categories_count'] %}
+            <div>{{ row.category }}: {{ row.count }}</div>
+            {% endfor %}
+        </div>
+    </section>
+    <section>
+        <h2>Citazioni con anno</h2>
+        <table>
+            <tr><th>Citazione</th><th>Anno</th><th>Fonte</th></tr>
+            {% for row in results['quotes_with_year'] %}
+            <tr><td>{{ row.quote }}</td><td>{{ row.quote_year }}</td><td>{{ row.source }}</td></tr>
+            {% endfor %}
+        </table>
+    </section>
+    <section>
+        <h2>Numero di citazioni per fonte</h2>
+        <ul>
+            {% for row in results['quotes_per_source'] %}
+            <li>{{ row.source }}: {{ row.num_quotes }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Eventi recenti di carriera</h2>
+        <ul>
+            {% for row in results['recent_career_events'] %}
+            <li>{{ row.event_date }}: {{ row.description }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Ultimi 5 commenti</h2>
+        <table>
+            <tr><th>Utente</th><th>Commento</th><th>Data</th></tr>
+            {% for row in results['latest_5_comments'] %}
+            <tr><td>{{ row.username }}</td><td>{{ row.content }}</td><td>{{ row.comment_date }}</td></tr>
+            {% endfor %}
+        </table>
+    </section>
+    <section>
+        <h2>Partite con highlight associato </h2>
+        <table>
+            <tr><th>Data</th><th>Avversario</th><th>Highlight</th></tr>
+            {% for row in results['games_with_highlights'] %}
+            <tr><td>{{ row.game_date }}</td><td>{{ row.opponent }}</td><td>{{ row.highlight_title }}</td></tr>
+            {% endfor %}
+        </table>
+    </section>
+    
+</body>
+</html>

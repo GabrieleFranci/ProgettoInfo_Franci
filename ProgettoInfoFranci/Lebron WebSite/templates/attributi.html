@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attributi Fisici di LeBron James</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            background: url('{{ url_for('static', filename='favicon/lebron7-bg.gif') }}') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Overlay semi-trasparente */
+            z-index: -1;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffcc00;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .attributes-section {
+            background-color: rgba(0, 0, 0, 0.7); /* Sfondo nero trasparente */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+            color: #ffcc00;
+            text-align: center;
+        }
+
+        .attributes-section p {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .attributes-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .attributes-section li {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .attributes-section li::before {
+            content: "✔"; /* Icona per ogni attributo */
+            color: #ffcc00;
+            margin-right: 10px;
+        }
+
+        .image-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            background-color: rgba(0, 0, 0, 0.7); /* Sfondo nero trasparente */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-section.left {
+            flex-direction: row;
+        }
+
+        .image-section.right {
+            flex-direction: row-reverse;
+        }
+
+        .image-section.right img {
+            width: 900px; /* Aumentata ulteriormente la larghezza della seconda immagine */
+        }
+
+        .image-section.center {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .image-section img {
+            width: 500px;
+            height: auto;
+            border: 3px solid #ffcc00;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .image-section p {
+            font-size: 1.2rem;
+            color: #fff;
+            text-shadow: 1px 1px 2px #000;
+            margin: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffcc00;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gli attributi fisici di LeBron James</h1>
+        <a href="{{ url_for('home') }}">Torna alla home</a>
+    </header>
+
+    <main>
+        <div class="attributes-section">
+            <p>LeBron James è famoso per il suo fisico imponente:</p>
+            <ul>
+                <li>Altezza: 2.06 m</li>
+                <li>Peso: 113 kg</li>
+                <li>Braccio d'apertura: 2.13 m</li>
+                <li>Velocità: 35.4 km/h (velocità di corsa durante un gioco)</li>
+            </ul>
+        </div>
+
+        <!-- Immagine a sinistra, descrizione a destra -->
+        <div class="image-section left">
+            <img src="{{ url_for('static', filename='favicon/lebron22.jpg') }}" alt="LeBron James Highlight 1">
+            <p>"In questa iconica foto, LeBron James posa in sala pesi mostrando la sua impressionante forma fisica. Ogni muscolo racconta anni di lavoro, sacrifici e disciplina assoluta. Non è solo un atleta dotato, ma un esempio vivente di quanto l’impegno quotidiano faccia la differenza. Questa immagine è diventata simbolo della sua dedizione fuori dal campo: non basta il talento, serve la testa, la fatica e la costanza. LeBron lo sa bene, e lo dimostra ogni giorno, anche in palestra.".</p>
+        </div>
+
+        <!-- Immagine a destra, descrizione a sinistra -->
+        <div class="image-section right">
+            <img src="{{ url_for('static', filename='favicon/lebron23.jpg') }}" alt="LeBron James Highlight 2">
+            <p>"Questa immagine cattura alla perfezione l’atletismo fuori dal comune di LeBron James: la testa all’altezza del ferro, sospeso in aria come se sfidasse la gravità. Non è solo una schiacciata, è una dichiarazione di superiorità fisica e mentale. In un solo scatto si vede tutta la sua potenza esplosiva, il controllo del corpo e quell’istinto unico che lo ha reso una leggenda. È il tipo di giocata che non solo impressiona, ma resta nella memoria di chi ama il basket.".</p>
+        </div>
+
+        <!-- Immagine centrale, descrizione sotto -->
+        <div class="image-section center">
+            <img src="{{ url_for('static', filename='favicon/lebron6-bg.gif') }}" alt="LeBron James GIF">
+            <p>"In questa gif leggendaria, la sequenza è pura sinfonia cestistica: recupero di Wade, passaggi rapidi e precisi, poi il lob finale... e LeBron decolla. Non è solo una schiacciata, è un’esplosione. Il poster contro i Celtics è la conclusione brutale di un'azione perfetta, con LeBron che vola sopra la difesa come se il tempo si fermasse per esaltare la sua grandezza. È uno di quei momenti che riassume chi è LeBron: potenza, tempismo e spettacolo inarrestabile.".</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 LeBron James Website</p>
+    </footer>
+</body>
+</html>

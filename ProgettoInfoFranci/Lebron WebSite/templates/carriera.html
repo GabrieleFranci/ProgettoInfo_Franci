@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La carriera di LeBron James</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header con immagine di sfondo */
+        header {
+            background-image: url("{{ url_for('static', filename='images/basket.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            height: 300px; /* Altezza del header */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Contorno nero per il testo */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem; /* Aumenta la dimensione del titolo */
+        }
+
+        header a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-size: 1.5rem; /* Aumenta la dimensione del link */
+            margin-top: 15px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .team-achievements {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-achievements:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .team-achievements h2,
+        .team-achievements p {
+            color: #fff;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Contorno nero per il testo */
+        }
+
+        .team-achievements img {
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .lebron-img {
+            width: 500px;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        /* Stili per le diverse squadre */
+        .cavs {
+            background-color: #6f263d;
+            color: #ffb81c;
+        }
+
+        .cavs h2 {
+            color: #fff;
+        }
+
+        .cavs img {
+            border: 3px solid #ffb81c;
+        }
+
+        .heat {
+            background-color: #98002e;
+            color: #f9a01b;
+        }
+
+        .heat h2 {
+            color: #fff;
+        }
+
+        .heat img {
+            border: 3px solid #f9a01b;
+        }
+
+        .cavs2 {
+            background-color: #6f263d;
+            color: #ffb81c;
+        }
+
+        .cavs2 h2 {
+            color: #fff;
+        }
+
+        .cavs2 img {
+            border: 3px solid #ffb81c;
+        }
+
+        .lakers {
+            background-color: #552583;
+            color: #fdb927;
+        }
+
+        .lakers h2 {
+            color: #fff;
+        }
+
+        .lakers img {
+            border: 3px solid #fdb927;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Contorno nero per il testo */
+        }
+    </style>
+</head>
+<body>
+    <header style="background-image: url('{{ url_for('static', filename='favicon/basket.jpg') }}'); background-size: cover; background-position: center; height: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+        <h1>La carriera di LeBron James</h1>
+        <a href="{{ url_for('home') }}" style="color: #ffcc00; text-decoration: none; font-size: 1.5rem; margin-top: 15px;">Torna alla home</a>
+    </header>
+    
+
+    <main>
+        <p>LeBron James ha giocato per le seguenti squadre:</p>
+
+        <a href="{{ url_for('cavs_photos') }}" style="text-decoration: none; color: inherit;">
+            <div class="team-achievements cavs">
+                <h2>Cleveland Cavaliers (2003-2010)</h2>
+                <img src="{{ url_for('static', filename='favicon/cavs.png') }}" alt="Cleveland Cavaliers Logo">
+                <img src="{{ url_for('static', filename='favicon/lebron9.jpg') }}" alt="Cleveland Cavaliers Banner" class="lebron-img">
+                <p>LeBron James ha iniziato la sua carriera NBA con i Cleveland Cavaliers. Durante il suo periodo con la squadra, è stato il leader indiscusso, portando la squadra alle finali NBA nel 2007 e vincendo il suo primo MVP nel 2009.</p>
+            </div>
+        </a>
+
+        <a href="{{ url_for('heat_photos') }}" style="text-decoration: none; color: inherit;">
+            <div class="team-achievements heat">
+                <h2>Miami Heat (2010-2014)</h2>
+                <img src="{{ url_for('static', filename='favicon/heat.png') }}" alt="Miami Heat Logo">
+                <img src="{{ url_for('static', filename='favicon/lebron12.png') }}" alt="Miami Heat Banner" class="lebron-img">
+                <p>Con i Miami Heat, LeBron ha vinto due campionati NBA consecutivi (2012 e 2013) e ha consolidato la sua posizione tra i migliori giocatori della storia. Durante questo periodo ha vinto anche due MVP delle finali.</p>
+            </div>
+        </a>
+
+        <a href="{{ url_for('cavs2_photos') }}" style="text-decoration: none; color: inherit;">
+            <div class="team-achievements cavs2">
+                <h2>Cleveland Cavaliers (2014-2018)</h2>
+                <img src="{{ url_for('static', filename='favicon/cavs2.png') }}" alt="Cleveland Cavaliers Second Period Logo">
+                <img src="{{ url_for('static', filename='favicon/lebron11.jpg') }}" alt="Cleveland Cavaliers Second Period Banner" class="lebron-img">
+                <p>LeBron è tornato ai Cavaliers e ha portato la squadra alla storica vittoria del campionato NBA nel 2016, diventando il primo giocatore a vincere un titolo con una squadra della sua città natale.</p>
+            </div>
+        </a>
+
+        <a href="{{ url_for('lakers_photos') }}" style="text-decoration: none; color: inherit;">
+            <div class="team-achievements lakers">
+                <h2>Los Angeles Lakers (2018-presente)</h2>
+                <img src="{{ url_for('static', filename='favicon/lakers.png') }}" alt="Los Angeles Lakers Logo">
+                <img src="{{ url_for('static', filename='favicon/lebron10.jpg') }}" alt="Los Angeles Lakers Banner" class="lebron-img">
+                <p>Con i Lakers, LeBron ha vinto il titolo NBA nel 2020, portando la sua nuova squadra al trionfo durante la pandemia di COVID-19, chiudendo un altro capitolo importante della sua carriera.</p>
+            </div>
+        </a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 LeBron James Website</p>
+    </footer>
+</body>
+</html>

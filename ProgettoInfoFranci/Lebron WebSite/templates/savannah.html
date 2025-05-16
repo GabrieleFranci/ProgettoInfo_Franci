@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savannah James</title>
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='favicon/savannah-bg.gif') }}") no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto 40px auto;
+            background: rgba(0,0,0,0.85);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+            padding: 40px 30px 30px 30px;
+        }
+        h1 {
+            font-size: 2.7rem;
+            margin-bottom: 10px;
+            color: #FDB927;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            text-align: center;
+        }
+        .gallery {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin: 30px 0 40px 0;
+            flex-wrap: wrap;
+        }
+        .gallery img {
+            width: 260px;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 4px solid #FDB927;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+            background: #222;
+        }
+        .section {
+            margin-bottom: 38px;
+            background: rgba(30,30,30,0.85);
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+            padding: 28px 24px 18px 24px;
+        }
+        .section h2 {
+            color: #FDB927;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+        .section p {
+            color: #fff;
+            font-size: 1.13rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+        .back-link {
+            color: #FDB927;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
+        .back-link:hover {
+            color: #fff;
+        }
+        @media (max-width: 1000px) {
+            .gallery { flex-direction: column; align-items: center; }
+            .gallery img { width: 90vw; max-width: 350px; height: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Savannah James</h1>
+        <div class="gallery">
+            <img src="{{ url_for('static', filename='favicon/savannah.jpg') }}" alt="Savannah James 1">
+            <img src="{{ url_for('static', filename='favicon/savannah2.jpg') }}" alt="Savannah James 2">
+            <img src="{{ url_for('static', filename='favicon/savannah3.jpg') }}" alt="Savannah James 3">
+        </div>
+        <div class="section">
+            <h2>❤️ Vita personale e relazioni</h2>
+            <p>Savannah Racheal Brinson James è nata il 27 agosto 1986 ad Akron, Ohio. Ha conosciuto LeBron quando erano adolescenti: lei frequentava la Buchtel High School, lui era già una stella nascente del basket. Si sono messi insieme a 16 e 17 anni, e sono diventati una delle coppie più solide e longeve del mondo sportivo. Si sono sposati nel 2013 e hanno tre figli: Bronny, Bryce e Zhuri.<br><br>
+            Savannah è nota per essere riservata, discreta e incredibilmente leale, preferendo spesso restare lontano dai riflettori pur sostenendo costantemente la carriera del marito e la crescita della famiglia. LeBron stesso la definisce “la vera MVP” della loro vita.</p>
+        </div>
+        <div class="section">
+            <h2>💼 Carriera e attività imprenditoriali</h2>
+            <p>Nonostante sia spesso associata solo al ruolo di moglie e madre, Savannah è una donna d’affari a tutto tondo. Ha lanciato diverse iniziative imprenditoriali, tra cui una linea di arredamento e uno showroom di mobili per interni. È anche attiva nel campo della moda e del beauty, con uno stile elegante e sofisticato che l’ha resa un'icona silenziosa tra le wags dello sport americano.<br><br>
+            Savannah è inoltre molto attenta all’educazione femminile: ha creato iniziative come il programma "Women of Our Future", che offre mentoring e supporto a giovani ragazze nei licei dell’Ohio.</p>
+        </div>
+        <div class="section">
+            <h2>🌍 Influenza e impegno sociale</h2>
+            <p>Savannah James ha scelto un profilo basso ma efficace nel mondo dell’impegno sociale. Collabora spesso con la LeBron James Family Foundation, dove partecipa a progetti educativi, raccolte fondi e programmi di assistenza per famiglie in difficoltà.<br><br>
+            È una figura molto rispettata nella comunità afroamericana, vista come esempio di forza, eleganza e stabilità familiare. Pur evitando le luci dello show business, esercita una forte influenza culturale attraverso la sua immagine e il suo esempio, ispirando altre donne ad affermarsi senza necessariamente esporsi.</p>
+        </div>
+        <a class="back-link" href="/famiglia">&#8592; Torna alla famiglia</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto dei Miami Heat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('{{ url_for('static', filename='favicon/lebron3-bg.gif') }}') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #ffcc00;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        header a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+
+        .gallery-item {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border: 3px solid #ffcc00;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffcc00;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Foto dei Miami Heat (2010-2014)</h1>
+        <a href="{{ url_for('carriera') }}">Torna alla sezione carriera</a>
+    </header>
+    <main>
+        <p>Foto e momenti iconici di LeBron James con i Miami Heat.</p>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='favicon/lebron12.jpg') }}" alt="LeBron con i trofei">
+                <p>Una delle foto più famose della storia del basket NBA ritrae un momento spettacolare tra due grandi giocatori: Dwyane Wade e LeBron James. Wade era una stella dei Miami Heat, noto per la sua velocità e intelligenza di gioco. LeBron James, considerato uno dei migliori giocatori di sempre, aveva appena iniziato a giocare con lui a Miami nel 2010. In una partita contro i Milwaukee Bucks, Wade corre verso il canestro e lancia la palla in aria senza guardare, un passaggio chiamato alley-oop. LeBron arriva in volo, afferra la palla e schiaccia con forza nel canestro. Proprio in quell’istante, un fotografo cattura la scena: Wade è davanti con le braccia già aperte in esultanza, mentre LeBron sta ancora volando dietro di lui. La foto è diventata iconica, cioè leggendaria, perché mostra perfettamente la sintonia tra i due e la bellezza del gioco. Anche chi non segue il basket la riconosce, è un'immagine diventata simbolo dell’era dei Miami Heat..</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='favicon/lebron13.jpg') }}" alt="LeBron in azione">
+                <p>LeBron James in azione con la maglia dei Miami Heat.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='favicon/lebron14.jpg') }}" alt="LeBron in posa">
+                <p>La prima "chip" di LeBron James arrivò nel 2012, con i Miami Heat. Dopo anni di critiche per non aver ancora vinto un anello, LeBron rispose da campione. In quella stagione fu il leader assoluto della squadra, vincendo anche il titolo di MVP delle Finals. I Miami Heat affrontarono gli Oklahoma City Thunder di Kevin Durant, Russell Westbrook e James Harden. Dopo aver perso Gara 1, Miami vinse le successive quattro partite, chiudendo la serie 4-1. LeBron fu dominante in ogni aspetto del gioco: segnava, difendeva e distribuiva assist con intelligenza. Fu un momento di svolta nella sua carriera, dove dimostrò maturità e leadership. Chiuse le Finals con una media di 28.6 punti, 10.2 rimbalzi e 7.4 assist. Finalmente, LeBron coronò il suo sogno di diventare campione NBA. .</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 LeBron James Website</p>
+    </footer>
+</body>
+</html>

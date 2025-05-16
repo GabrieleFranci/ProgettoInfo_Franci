@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto dei Los Angeles Lakers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('{{ url_for('static', filename='favicon/lebron4-bg.gif') }}') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #ffcc00;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        header a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+
+        .gallery-item {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border: 3px solid #ffcc00;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffcc00;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Foto dei Los Angeles Lakers (2018-presente)</h1>
+        <a href="{{ url_for('carriera') }}">Torna alla sezione carriera</a>
+    </header>
+    <main>
+        <p>Foto e momenti iconici di LeBron James con i Los Angeles Lakers.</p>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='favicon/lebron19.jpg') }}" alt="LeBron con i Lakers">
+                <p>l'inizio di una nuova era per i Lakers, reduci da anni di mediocrità. L'arrivo di LeBron ha segnato il ritorno della franchigia nella conversazione dei contender, anche se la prima stagione si è conclusa senza playoff a causa di un infortunio muscolare che lo ha tenuto fuori a lungo.
+
+                    Nonostante ciò, quel debutto ha segnato un passaggio epocale: LeBron, dopo Cleveland e Miami, arrivava a una delle squadre più iconiche della storia NBA, portando con sé aspettative altissime..</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='favicon/lebron20.jpg') }}" alt="LeBron in azione">
+                <p>LeBron James è diventato il primo giocatore nella storia della NBA a superare i 40.000 punti in carriera nella stagione 2023-2024. Questo traguardo combina regular season e playoff, ma anche solo in regular season ha superato quota 40.000 — un'impresa mai raggiunta da nessun altro.
+
+                    È il risultato di longevità, consistenza e versatilità offensiva: LeBron segna da 20 anni con efficienza, adattandosi a ogni era del gioco. Non è solo un realizzatore puro, ma il fatto che abbia raggiunto questo traguardo mentre guida anche in assist per la sua posizione rende il tutto ancora più straordinario..</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='favicon/lebron21.jpg') }}" alt="LeBron festeggia il titolo">
+                <p>LeBron James festeggia il titolo NBA del 2020 con i Los Angeles Lakers.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 LeBron James Website</p>
+    </footer>
+</body>
+</html>

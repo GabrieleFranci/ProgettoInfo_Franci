@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bronny James</title>
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='favicon/bronny1-bg.gif') }}") no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto 40px auto;
+            background: rgba(0,0,0,0.85);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+            padding: 40px 30px 30px 30px;
+        }
+        h1 {
+            font-size: 2.7rem;
+            margin-bottom: 10px;
+            color: #FDB927;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            text-align: center;
+        }
+        .gallery {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin: 30px 0 40px 0;
+            flex-wrap: wrap;
+        }
+        .gallery img {
+            width: 260px;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 4px solid #FDB927;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+            background: #222;
+        }
+        .section {
+            margin-bottom: 38px;
+            background: rgba(30,30,30,0.85);
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+            padding: 28px 24px 18px 24px;
+        }
+        .section h2 {
+            color: #FDB927;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+        .section p {
+            color: #fff;
+            font-size: 1.13rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+        .back-link {
+            color: #FDB927;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
+        .back-link:hover {
+            color: #fff;
+        }
+        @media (max-width: 1000px) {
+            .gallery { flex-direction: column; align-items: center; }
+            .gallery img { width: 90vw; max-width: 350px; height: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bronny James</h1>
+        <div class="gallery">
+            <img src="{{ url_for('static', filename='favicon/bronny1.jpg') }}" alt="Bronny James in azione 1">
+            <img src="{{ url_for('static', filename='favicon/bronny2.jpg') }}" alt="Bronny James in azione 2">
+            <img src="{{ url_for('static', filename='favicon/Bronny3.jpg') }}" alt="Bronny James in azione 3">
+        </div>
+        <div class="section">
+            <h2>🏀 Sul campo</h2>
+            <p>Bronny James, nato il 6 ottobre 2004, è una giovane guardia di talento che ha attirato l’attenzione sin da giovanissimo grazie al suo cognome, ma anche grazie al proprio gioco. Alto circa 1,90 m (6'3") con una struttura atletica solida, è noto per la sua intelligenza cestistica, la difesa intensa e la capacità di fare le giocate giuste nei momenti chiave. Non è un attaccante esplosivo come suo padre, ma ha mostrato ottima visione, miglioramento costante nel tiro da tre e grande attitudine al gioco di squadra.<br><br>
+            Ha giocato alla Sierra Canyon School, una delle scuole superiori più seguite d’America, e successivamente ha scelto di giocare al college con USC (University of Southern California), dove ha esordito dopo un breve stop per un problema cardiaco. Il suo potenziale NBA è ancora in fase di sviluppo, ma gli scout riconoscono in lui una forte etica del lavoro, ottime letture difensive e mentalità vincente.</p>
+        </div>
+        <div class="section">
+            <h2>👨‍👦 Nella vita</h2>
+            <p>Fuori dal campo, Bronny è cresciuto sotto i riflettori sin da bambino. Figlio di LeBron James e Savannah James, ha vissuto una giovinezza privilegiata ma anche estremamente esposta. Ha mostrato maturità nell'affrontare la pressione dei media e delle aspettative, scegliendo un percorso graduale senza saltare tappe.<br><br>
+            Ha una forte connessione con la sua famiglia, in particolare con suo padre, che lo guida con discrezione, e sua madre, sempre presente ma lontana dai riflettori. È anche molto legato ai suoi fratelli minori, Bryce e Zhuri.<br><br>
+            Nel 2023 ha dovuto affrontare un evento serio: un arresto cardiaco durante un allenamento, che ha messo in pausa momentaneamente la sua carriera. Il modo in cui ha gestito la situazione, con forza e maturità, ha colpito molti.</p>
+        </div>
+        <div class="section">
+            <h2>🌍 Nell'immaginario pubblico</h2>
+            <p>Bronny è molto più di “il figlio di LeBron James”. È diventato un personaggio seguito da milioni di fan, specialmente sui social, dove condivide momenti della sua vita e dei suoi progressi sportivi. È anche un volto familiare nel mondo degli e-sport e dei videogiochi, dove è molto attivo, in particolare su Twitch.<br><br>
+            Il pubblico lo guarda con interesse sia per quello che rappresenta (la continuità del nome James nel basket) sia per la curiosità di vederlo affermarsi con una propria identità. LeBron ha dichiarato apertamente il sogno di giocare un giorno insieme a suo figlio in NBA: questa possibilità ha reso Bronny uno dei prospetti più seguiti anche per ragioni affettive e simboliche.</p>
+        </div>
+        <a class="back-link" href="/famiglia">&#8592; Torna alla famiglia</a>
+    </div>
+</body>
+</html>

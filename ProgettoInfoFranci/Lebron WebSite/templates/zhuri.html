@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhuri James</title>
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='favicon/zhuri1-bg.gif') }}") no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto 40px auto;
+            background: rgba(0,0,0,0.85);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+            padding: 40px 30px 30px 30px;
+        }
+        h1 {
+            font-size: 2.7rem;
+            margin-bottom: 10px;
+            color: #FDB927;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            text-align: center;
+        }
+        .gallery {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin: 30px 0 40px 0;
+            flex-wrap: wrap;
+        }
+        .gallery img {
+            width: 260px;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 4px solid #FDB927;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+            background: #222;
+        }
+        .section {
+            margin-bottom: 38px;
+            background: rgba(30,30,30,0.85);
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+            padding: 28px 24px 18px 24px;
+        }
+        .section h2 {
+            color: #FDB927;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+        .section p {
+            color: #fff;
+            font-size: 1.13rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+        .back-link {
+            color: #FDB927;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
+        .back-link:hover {
+            color: #fff;
+        }
+        @media (max-width: 1000px) {
+            .gallery { flex-direction: column; align-items: center; }
+            .gallery img { width: 90vw; max-width: 350px; height: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Zhuri James</h1>
+        <div class="gallery">
+            <img src="{{ url_for('static', filename='favicon/zhuri1.jpg') }}" alt="Zhuri James 1">
+            <img src="{{ url_for('static', filename='favicon/zhuri2.jpg') }}" alt="Zhuri James 2">
+            <img src="{{ url_for('static', filename='favicon/zhuri3.jpg') }}" alt="Zhuri James 3">
+        </div>
+        <div class="section">
+            <h2>👧 Personalità e vita familiare</h2>
+            <p>Zhuri Nova James è nata il 22 ottobre 2014, la figlia più piccola di LeBron James e Savannah Brinson. Nonostante la giovanissima età, Zhuri ha già una forte e ben definita personalità: vivace, intelligente e piena di carisma. È la cocca di papà, come spesso mostra LeBron sui social, e la dinamica con i suoi fratelli è affettuosa ma anche scherzosa.<br><br>
+            La famiglia James ha sempre enfatizzato l'importanza di educazione, valori e rispetto reciproco, e Zhuri sembra rispecchiare perfettamente questi principi. Frequenta una scuola privata di alto livello a Los Angeles e, secondo varie interviste, ama imparare, disegnare e ballare.</p>
+        </div>
+        <div class="section">
+            <h2>🎥 Presenza pubblica e media</h2>
+            <p>Zhuri è probabilmente la più mediatica della famiglia dopo LeBron. Ha un suo canale YouTube chiamato “All Things Zhuri”, creato con il supporto dei genitori, dove mostra tutorial, ricette, lavoretti e momenti della vita quotidiana. Il canale ha riscosso subito successo grazie al suo modo naturale e simpatico di parlare davanti alla videocamera.<br><br>
+            È spesso presente anche nei contenuti social della famiglia James, dove ruba la scena con commenti ironici o performance improvvisate. LeBron ha più volte dichiarato che è lei la vera star della casa, capace di tener testa a tutti, anche a lui.</p>
+        </div>
+        <div class="section">
+            <h2>🌱 Prospettive future</h2>
+            <p>Anche se è ancora presto per parlare di un vero percorso professionale, Zhuri mostra inclinazioni artistiche e comunicative. Potrebbe svilupparsi in ambiti come la recitazione, la moda, la comunicazione o l’imprenditoria infantile, considerando anche l’ambiente creativo e motivante in cui cresce.<br><br>
+            La sua capacità di parlare in pubblico, la disinvoltura davanti alle telecamere e l’interesse per le attività creative fanno pensare che potrebbe costruire un’identità ben distinta dalla carriera sportiva del padre e dei fratelli.<br><br>
+            In ogni caso, Zhuri ha davanti a sé moltissime strade, e con il supporto della famiglia James, è chiaro che le sarà permesso di scegliere quella che più le appassiona, con libertà e determinazione.</p>
+        </div>
+        <a class="back-link" href="/famiglia">&#8592; Torna alla famiglia</a>
+    </div>
+</body>
+</html>
